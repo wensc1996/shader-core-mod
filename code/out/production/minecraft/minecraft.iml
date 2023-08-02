@@ -8,5 +8,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="code" />
+    <orderEntry type="library" name="lwjgl-2.9.0" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.1" level="project" />
+    <orderEntry type="library" name="bcprov-jdk15on-1.47" level="project" />
+    <orderEntry type="library" name="commons-io-2.4" level="project" />
+    <orderEntry type="library" name="codecwav-20101023" level="project" />
+    <orderEntry type="library" name="librarylwjglopenal-20100824" level="project" />
+    <orderEntry type="library" name="codecjorbis-20101023" level="project" />
+    <orderEntry type="library" name="soundsystem-20120107" level="project" />
+    <orderEntry type="library" name="guava-14.0" level="project" />
+    <orderEntry type="library" name="gson-2.2.2" level="project" />
+    <orderEntry type="library" name="argo-2.25_fixed" level="project" />
+    <orderEntry type="library" name="jopt-simple-4.5" level="project" />
+    <orderEntry type="library" name="lwjgl_util-2.9.0" level="project" />
   </component>
 </module>

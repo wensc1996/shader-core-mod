@@ -1,5 +1,6 @@
 package shadersmodcore.transform;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -14,6 +15,30 @@ public abstract class SMCLog {
     public static final Level SMCFINE = new SMCLog.SMCLevel("FNE", 830);
     public static final Level SMCFINER = new SMCLog.SMCLevel("FNR", 820);
     public static final Level SMCFINEST = new SMCLog.SMCLevel("FNT", 810);
+
+    public static void saveTransformedClass(byte[] data, String transformedName) {
+        String tempFolder = "dump";
+        if (tempFolder != null) {
+            File outFile = new File(tempFolder, transformedName.replace('.', File.separatorChar) + ".class");
+            File outDir = outFile.getParentFile();
+            if (!outDir.exists()) {
+                outDir.mkdirs();
+            }
+
+            if (outFile.exists()) {
+                outFile.delete();
+            }
+
+            try {
+                OutputStream output = new FileOutputStream(outFile);
+                output.write(data);
+                output.close();
+            } catch (IOException var6) {
+                warning("Could not save transformed class \"%s\"", new Object[]{transformedName});
+            }
+        }
+
+    }
 
     public static void log(Level level, String message) {
         if (logger.isLoggable(level)) {

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="asm-all-4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../我的世界/1.6.4-forge/.minecraft/libraries/org/ow2/asm/asm-all/4.1/asm-all-4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

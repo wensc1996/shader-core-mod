@@ -1,0 +1,17 @@
+[
+  {
+    "modid": "shadersmod",
+    "name": "GLSL Shaders Mod",
+    "description": "Use custom GLSL shaders to render world.",
+    "version": "2.2.3",
+    "mcversion": "",
+    "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1286604-shaders-mod-updated-by-karyonix",
+    "updateUrl": "",
+    "authors": ["karyonix","sonic ether","id_miner","daxnitro"],
+    "credits": "Based on daxnitro's GLSL Shaders Mod. Updated by karyonix, id_miner, sonic ether.",
+    "logoFile": "",
+    "screenshots": [],
+    "parent":"",
+    "dependencies": []
+  }
+]

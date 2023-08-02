@@ -51,6 +51,7 @@ public class ShadersTex {
     static int imageSize;
 
     public ShadersTex() {
+        System.out.println("检测：" + System.getProperty("java.classpath"));
     }
 
     public static IntBuffer getIntBuffer(int size) {
@@ -343,23 +344,20 @@ public class ShadersTex {
         int h2 = height;
         int o1 = 0;
         int w1 = 0;
-        int h1 = false;
+        int h1 = 0;
 
         int level;
-        int p2;
-        int y;
-        int x;
-        for(level = 0; w2 > 1 && h2 > 1; o2 = o1) {
+        for (level = 0; w2 > 1 && h2 > 1; o2 = o1) {
             o1 = o2 + w2 * h2;
             w1 = w2 / 2;
-            int h1 = h2 / 2;
+            h1 = h2 / 2;
 
-            for(p2 = 0; p2 < h1; ++p2) {
-                y = o1 + p2 * w1;
-                x = o2 + p2 * 2 * w2;
+            for (int y = 0; y < h1; ++y) {
+                int p1 = o1 + y * w1;
+                int p2 = o2 + y * 2 * w2;
 
-                for(int x = 0; x < w1; ++x) {
-                    aint[y + x] = blend4Alpha(aint[x + x * 2], aint[x + x * 2 + 1], aint[x + w2 + x * 2], aint[x + w2 + x * 2 + 1]);
+                for (int x = 0; x < w1; ++x) {
+                    aint[p1 + x] = blend4Alpha(aint[p2 + x * 2], aint[p2 + x * 2 + 1], aint[p2 + w2 + x * 2], aint[p2 + w2 + x * 2 + 1]);
                 }
             }
 
@@ -368,15 +366,15 @@ public class ShadersTex {
             h2 = h1;
         }
 
-        while(level > 0) {
+        while (level > 0) {
             --level;
             w2 = width >> level;
             h2 = height >> level;
             o2 = o1 - w2 * h2;
-            p2 = o2;
+            int p2 = o2;
 
-            for(y = 0; y < h2; ++y) {
-                for(x = 0; x < w2; ++x) {
+            for (int y = 0; y < h2; ++y) {
+                for (int x = 0; x < w2; ++x) {
                     if (aint[p2] == 0) {
                         aint[p2] = aint[o1 + y / 2 * w1 + x / 2] & 16777215;
                     }
@@ -398,23 +396,20 @@ public class ShadersTex {
         int h2 = height;
         int o1 = 0;
         int w1 = 0;
-        int h1 = false;
+        int h1 = 0;
 
         int level;
-        int p2;
-        int y;
-        int x;
-        for(level = 0; w2 > 1 && h2 > 1; o2 = o1) {
+        for (level = 0; w2 > 1 && h2 > 1; o2 = o1) {
             o1 = o2 + w2 * h2;
             w1 = w2 / 2;
-            int h1 = h2 / 2;
+            h1 = h2 / 2;
 
-            for(p2 = 0; p2 < h1; ++p2) {
-                y = o1 + p2 * w1;
-                x = o2 + p2 * 2 * w2;
+            for (int y = 0; y < h1; ++y) {
+                int p1 = o1 + y * w1;
+                int p2 = o2 + y * 2 * w2;
 
-                for(int x = 0; x < w1; ++x) {
-                    aint[y + x] = blend4Simple(aint[x + x * 2], aint[x + x * 2 + 1], aint[x + w2 + x * 2], aint[x + w2 + x * 2 + 1]);
+                for (int x = 0; x < w1; ++x) {
+                    aint[p1 + x] = blend4Simple(aint[p2 + x * 2], aint[p2 + x * 2 + 1], aint[p2 + w2 + x * 2], aint[p2 + w2 + x * 2 + 1]);
                 }
             }
 
@@ -423,15 +418,15 @@ public class ShadersTex {
             h2 = h1;
         }
 
-        while(level > 0) {
+        while (level > 0) {
             --level;
             w2 = width >> level;
             h2 = height >> level;
             o2 = o1 - w2 * h2;
-            p2 = o2;
+            int p2 = o2;
 
-            for(y = 0; y < h2; ++y) {
-                for(x = 0; x < w2; ++x) {
+            for (int y = 0; y < h2; ++y) {
+                for (int x = 0; x < w2; ++x) {
                     if (aint[p2] == 0) {
                         aint[p2] = aint[o1 + y / 2 * w1 + x / 2] & 16777215;
                     }

@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: 
-Class-Path: lwjgl-2.9.0.jar
+TweakClass: shadersmodcore.loading.SMCTweaker
+TweakOrder: 1100
 

@@ -1,3 +1,8 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package shadersmodcore.client;
 
 import net.minecraft.client.renderer.texture.AbstractTexture;

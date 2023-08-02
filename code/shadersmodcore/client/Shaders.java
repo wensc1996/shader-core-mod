@@ -1819,13 +1819,13 @@ public class Shaders {
             frameTimeCounter %= 100000.0F;
             rainStrength = minecraft.field_71441_e.func_72867_j(f);
             float fadeScalar = (float)diffSystemTime * 0.01F;
-            float fadeScalar = (float)Math.exp(Math.log(0.5) * (double)fadeScalar / (double)(wetness < rainStrength ? drynessHalfLife : wetnessHalfLife));
-            wetness = wetness * fadeScalar + rainStrength * (1.0F - fadeScalar);
+            float temp1 = (float)Math.exp(Math.log(0.5) * (double)fadeScalar / (double)(wetness < rainStrength ? drynessHalfLife : wetnessHalfLife));
+            wetness = wetness * temp1 + rainStrength * (1.0F - temp1);
             EntityLivingBase eye = mc.field_71451_h;
             eyePosY = (float)eye.field_70163_u * f + (float)eye.field_70137_T * (1.0F - f);
             eyeBrightness = eye.func_70070_b(f);
-            fadeScalar = (float)diffSystemTime * 0.01F;
-            float temp2 = (float)Math.exp(Math.log(0.5) * (double)fadeScalar / (double)eyeBrightnessHalflife);
+            temp1 = (float)diffSystemTime * 0.01F;
+            float temp2 = (float)Math.exp(Math.log(0.5) * (double)temp1 / (double)eyeBrightnessHalflife);
             eyeBrightnessFadeX = eyeBrightnessFadeX * temp2 + (float)(eyeBrightness & '\uffff') * (1.0F - temp2);
             eyeBrightnessFadeY = eyeBrightnessFadeY * temp2 + (float)(eyeBrightness >> 16) * (1.0F - temp2);
             isEyeInWater = mc.field_71474_y.field_74320_O == 0 && !mc.field_71451_h.func_70608_bn() && mc.field_71439_g.func_70055_a(Material.field_76244_g) ? 1 : 0;
